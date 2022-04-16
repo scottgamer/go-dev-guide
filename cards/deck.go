@@ -6,6 +6,21 @@ import "fmt"
 // which is a slice of strings
 type deck []string // deck extends all functionality from []string
 
+func newDeck() deck {
+	cards := deck{}
+
+	cardSuites := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "J", "Q", "K"}
+
+	for _, cardSuite := range cardSuites {
+		for _, cardValue := range cardValues {
+			cards = append(cards, cardValue+" of "+cardSuite)
+		}
+	}
+
+	return cards
+}
+
 // define receiver
 // any variable of type "deck"
 // now gets access to the
