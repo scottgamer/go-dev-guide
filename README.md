@@ -68,3 +68,23 @@ func (pointerToPerson *Person) updateName(newName string) {
 	// pointerToPerson.firstName = newName // this also works
 }
 ```
+
+### Pointers and Slices
+
+- `Slices` behave different to any other `primitive` or `struct`
+- the reason for this is that internally Go allocates 2 directions in memory
+  - one for the slice `metadata` (length, capacity, ptr to head)
+  - the other for the `array` of elements
+- when passing the slice to a function, it makes a copy of the `metadata` (as a pass by value)
+- but, since the `metadata's ptr to head` points to the same address the `array` is, the change is made by reference
+- in this case, there's no need to pass a `pointer` to the function
+
+### Value types & Reference types
+
+| Value Types | Reference Types |
+| ----------- | --------------- |
+| int         | slices          |
+| float       | maps            |
+| string      | channels        |
+| bools       | pointers        |
+| structs     | functions       |
