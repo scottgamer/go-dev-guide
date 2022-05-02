@@ -53,6 +53,7 @@ func main() {
 
 func (pointerToPerson *Person) updateName(newName string) {
 	(*pointerToPerson).firstName = newName
+	// pointerToPerson.firstName = newName // this also works
 }
 
 func updateName2(p *Person, newName string) {

@@ -38,3 +38,33 @@
 - Slices
   - all items must be of same type
   - allows to grow or shrink in size
+
+## Pointers
+
+- &variable: returns the `memory address` of the `value` this variable is pointing at
+- \*pointer: returns the `value` this `memory address` is point at
+- turn `address` into `value` with `*address`
+- turn `value` into `address` with `&value`
+- **Note:** as long as we have the `*pointer` as the param in function, the `&address` is optional
+
+```go
+func main {
+  var jim Person
+
+  // option 1: getting the reference to the address
+  jimPointer := &jim // gets memory address (reference) and assigns to jimPointer
+	jimPointer.updateName("Jimmy")
+	jim.print()
+
+  // option 2: directly passing the value
+  // this works as long as we have the * pointer as the param type
+  jim.updateName("Jimmy")
+	jim.print()
+
+}
+
+func (pointerToPerson *Person) updateName(newName string) {
+	(*pointerToPerson).firstName = newName
+	// pointerToPerson.firstName = newName // this also works
+}
+```
