@@ -88,3 +88,13 @@ func (pointerToPerson *Person) updateName(newName string) {
 | string      | channels        |
 | bools       | pointers        |
 | structs     | functions       |
+
+## Maps
+
+- keys and values statically typed
+- all keys must be the same type
+- all values must be the same type
+- keys are indexed, we can iterate over them
+- used to represent a collection of related properties
+- don't need to know all the keys at compile time
+- reference type
