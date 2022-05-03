@@ -98,3 +98,20 @@ func (pointerToPerson *Person) updateName(newName string) {
 - used to represent a collection of related properties
 - don't need to know all the keys at compile time
 - reference type
+
+## Interfaces
+
+- allows to make re-usable code
+- are a collection of methods
+
+```go
+type bot interface {
+	getGreeting() string
+  connectDevice()
+  linkUser(user) (string, error)
+}
+```
+
+- interfaces are **not** generic types
+- are "implicit", no need to link them with other `structs`
+- are a contract to help us manage types
