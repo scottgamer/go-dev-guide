@@ -115,3 +115,23 @@ type bot interface {
 - interfaces are **not** generic types
 - are "implicit", no need to link them with other `structs`
 - are a contract to help us manage types
+- an interface can be composed of other interfaces
+
+```go
+type ReadCloser interface {
+  Reader
+  Closer
+}
+
+type Closer interface {
+  Close() error
+}
+
+type Reader interface {
+  Read() []byte
+}
+```
+
+- go has the `Reader` and `Writer` interfaces used to parse external data
+- Source of data -> Reader -> [byte] // Output data that anyone can work with
+- []byte -> Writer -> Some form of output
